@@ -1,13 +1,8 @@
-function [fh h_line] = plot_twoAFs( twoAFs, fname, plot_field, clr, varargin )
+function [fh h_line] = plot_twoAFs( twoAFs, fname, plot_field, clr)
 %plot fraction correct for detection/discrimination task
 % plot_field: 'Data' or 'Interpolation' (so far)
-%   Detailed explanation goes here
 
-    if nargin >= 5
-        fh = varargin{1};
-    else
-        fh = figure();
-    end
+
     %% plot parameters
     lw = 2;
     mkr_sz = 8;
@@ -19,6 +14,7 @@ function [fh h_line] = plot_twoAFs( twoAFs, fname, plot_field, clr, varargin )
     n_discr = length(discr.rstarDiff);
     n_crv = 1 + n_discr;%detection & discrimination
     n_per_fig = nr_fig*nc_fig; 
+   
     
     h_line = gobjects(1,n_crv);    
 %     colors = distinguishable_colors(n_crv);
@@ -38,7 +34,9 @@ function [fh h_line] = plot_twoAFs( twoAFs, fname, plot_field, clr, varargin )
     value = discr.fractionCorrect;
     pedestals = discr.rstarPedestal;
     for nd=1:n_discr
-        subplot(nr_fig,nc_fig,nd+1); hold on;
+        n_fig = ceil((nd+1)/n_per_fig);
+        figure(n_fig);
+        subplot(nr_fig,nc_fig,(nd+1)-(n_fig-1)*n_per_fig); hold on;
         if isempty(xvalue{nd})
             continue;
         end
@@ -68,6 +66,7 @@ function [fh h_line] = plot_twoAFs( twoAFs, fname, plot_field, clr, varargin )
         set(h_line,prop);
     end
     %% set axis styles
+    fh = findobj('type','figure');
     set(findobj(fh,'type','axes'),'xscale','log','fontsize',18,'ytick',0.5:0.1:1);
    
     

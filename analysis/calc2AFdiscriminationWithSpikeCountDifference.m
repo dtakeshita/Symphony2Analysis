@@ -1,4 +1,4 @@
-function out = calc2AFdiscriminationWithSpikeCount(RstarMean, spc_post, varargin)
+function out = calc2AFdiscriminationWithSpikeCountDifference(RstarMean, spc_post, varargin)
     % 2AF in among different intensities
     if nargin >=3
         out = varargin{1};

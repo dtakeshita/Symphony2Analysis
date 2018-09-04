@@ -16,8 +16,7 @@ function out = calc2AFwithSpikeCount(I, Pre, Post, varargin )
     out.detection.Data.rstar = I;
     out.detection.Data.fractionCorrect = Pc;
     %% discrimination task
-    discr = struct();
-    discr = calc2AFdiscriminationWithSpikeCount(I, Post, discr, ctype);
+    discr = calc2AFdiscriminationWithSpikeCount(I, Post);
     % re-parse data for consistency 
     out.discrimination.Data.rstarPedestal = discr.twoAF_intensities.Ireference;
     out.discrimination.Data.rstarDiff = discr.twoAF_intensities.Idifference;

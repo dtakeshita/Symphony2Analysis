@@ -91,8 +91,8 @@ legend({'Spike count','Spike count difference'})
 title(sprintf('%s, Dipper',ttl_str),'interpreter','none')
 
  %% save figures
-sname =sprintf('Dipper_Summary_%s.pdf',cname);
+sname =
 prop = struct();
-prop.PaperOrientation = 'Portrait';
+prop.PaperOrientation = 'Landscape';
 setFigureSize([],prop);
 save_figs('',sname,save_path,'saveas');

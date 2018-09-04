@@ -4,11 +4,11 @@ code_root = '/Users/dtakeshi/Documents/MATLAB/Symphony2Analysis';
 addpath(genpath(code_root))
 dat_path = '/Users/dtakeshi/Documents/Data/FredPrimateData/parsedFiles';
 save_path = '/Users/dtakeshi/analysis/summaryPlots/PreliminaryAnalysis/FredPrimateData';
-% ctype = 'On';
-% cname = '2018-08-21_Ec1';
-ctype = 'Off';
-cname = '2018-08-21_Ec3';
-nEpochUsed = 50;%comment this out for all epochs
+ctype = 'On';
+cname = '2018-08-21_Ec4';
+% ctype = 'Off';
+% cname = '2018-08-21_Ec3';
+%nEpochUsed = 50;%comment this out for all epochs
 
 spt_file = sprintf('LedPulse10_%s-Parsed',cname);
 spc_file = sprintf('SpikeCount_LedPulse10_%s-Parsed',cname);

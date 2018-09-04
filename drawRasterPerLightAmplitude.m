@@ -2,8 +2,8 @@ function drawRasterPerLightAmplitude(dat)
     if nargin == 0
         close all;
         dat_path = '/Users/dtakeshi/Documents/Data/FredPrimateData/parsedFiles';
-        ctype = 'Off';
-        cname = 'LedPulse10_2018-08-21_Ec3-Parsed';
+        ctype = 'On';
+        cname = 'LedPulse10_2018-08-21_Ec1-Parsed';
         dat = load(fullfile(dat_path,ctype,cname));
         %dat = load(fullfile(dat_path,cname));
     end
@@ -15,7 +15,7 @@ function drawRasterPerLightAmplitude(dat)
     nInt = length(dat.spikeTiming);
     for nI = 1:nInt
         spt = dat.spikeTiming{nI};
-        FR = cellfun(@(spt)length(spt>-0.4 & spt<0),spt)/0.4;
+        FR = cellfun(@(spt)sum(spt>-0.4 & spt<0),spt)/0.4;
         FR_mean = mean(FR);
         FR_var = var(FR);
         subplot(ceil(nInt/2),2,nI)

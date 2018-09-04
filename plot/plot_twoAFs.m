@@ -28,6 +28,7 @@ function [FH h_line] = plot_twoAFs( twoAFs, fname, plot_field, clr, varargin)
 %     colors(2,:) = [0 1 0];
 %     colors(3,:) = [1 0 0];
     %% plot detection 2AF
+    figure(FH(1));
     subplot(nr_fig,nc_fig,1); hold on;
     root_field = sprintf('detection.%s.',plot_field);
     xvalue = ref_struct(twoAFs, [root_field, 'rstar']);

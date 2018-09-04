@@ -5,7 +5,7 @@ clear;
 %% addpath(genpath(pwd))
 dat_path = '/Users/dtakeshi/data/analysis/cellData';
 save_path = '/Users/dtakeshi/Documents/Data/FredPrimateData/parsedFiles';
-cname = '2018-08-21_Ec3';
+cname = '2018-08-21_Ec4';
 cdat = load(fullfile(dat_path,cname));
 cdat = cdat.cellData;
 nEpochs = cdat.attributes('Nepochs');
